@@ -1,0 +1,49 @@
+{
+  "videos" : [
+    {
+      "id": "BtLwoNJ6klE",
+      "title": "Arduino Basics 101",
+      "category": "arduino"
+    },
+    {
+      "id": "YT3birSKLLU",
+      "title": "Arduino Basics 102",
+      "category": "arduino"
+    },
+    {
+      "id": "nL34zDTPkcs",
+      "title": "Arduino in 15min",
+      "category": "arduino"
+    },
+    {
+      "id": "GCQwYgmuyVs",
+      "title": "High Speed 3d Printing",
+      "category": "printing"
+    },
+    {
+      "id": "M2c5sneDjsk",
+      "title": "3d Printed Screaming Spinning Tops",
+      "category": "printing"
+    },
+    {
+      "id": "O2thSsQrZUM",
+      "title": "Carbon M1 Demo",
+      "category": "printing"
+    },
+    {
+      "id": "qvrHuaHhqHI",
+      "title": "Fusion 360 Basics",
+      "category": "fusion"
+    },
+    {
+      "id": "Do_C_NLH5sw",
+      "title": "Fusion 360 CAM",
+      "category": "fusion"
+    },
+    {
+      "id": "7hBZ6cFmWjQ",
+      "title": "Fusion 360 Sheetmetal",
+      "category": "fusion"
+    }
+  ]
+}
