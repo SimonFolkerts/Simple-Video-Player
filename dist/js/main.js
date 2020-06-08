@@ -1,4 +1,5 @@
 const el_videoList = $('#video-thumbnails');
+const el_categoryList = $('#categories__list');
 var videosArray = [];
 
 // INITIALISE ----------------------------------------------------------------
@@ -6,6 +7,11 @@ function init() {
   $.getJSON('json/videos.json', function (data) {
     videosArray = data.videos;
     displayVideos(videosArray);
+  });
+
+  $.getJSON('json/categories.json', function (data) {
+    var categoriesArray = data.categories;
+    displayCategories(categoriesArray);
   });
 }
 
@@ -26,7 +32,6 @@ function makeVideoHTML(videoObject) {
       <h3 class="video__title">${videoObject.title}</h3>
       <p class="video__category">${videoObject.category}</p>
     </div>`
-
 }
 
 function addThumbnailClickListener() {
@@ -44,7 +49,7 @@ function playVideo(videoId) {
   $('#player').show();
 }
 
-// FILTERING ----------------------------------------------------------------
+// TITLE FILTER ----------------------------------------------------------------
 function getVideosByTitle(string) {
   string = string.toLowerCase();
   var matches = [];
@@ -59,17 +64,52 @@ function getVideosByTitle(string) {
 }
 
 function addSearchListeners() {
-  $('#search-bar__button').on('click', function () {
-    var searchString = $('#search-bar__input').val();
-    getVideosByTitle(searchString);
-  });
+  // $('#search-bar__button').on('click', function () {
+  //   var searchString = $('#search-bar__input').val();
+  //   getVideosByTitle(searchString);
+  // });
   $('#search-bar__input').on('keyup', function (event) {
-    if (event.keyCode == 13) {
+    // if (event.keyCode == 13) {
       var searchString = $(this).val();
       getVideosByTitle(searchString);
-    }
+    // }
   });
 
+}
+
+
+// VIEW CATEGORIES --------------------------------
+function displayCategories(categories) {
+  var html = '';
+  for (var i = 0; i < categories.length; i++) {
+    html += makeCategoryHtml(categories[i]);
+  }
+  el_categoryList.html(html);
+  addCategoryClickListener();
+}
+
+function makeCategoryHtml(category) {
+  return `
+  <li class="categories__item" data-id="${category.id}">${category.title}</li>
+  `
+}
+
+// CATEGORY FILTER ------------------------------------------------
+function getVideosByCategory(id) {
+  var matches = [];
+  for (var i = 0; i < videosArray.length; i++) {
+    if(videosArray[i].categoryId === id) {
+      matches.push(videosArray[i]);
+    };
+  }
+  displayVideos(matches);
+}
+
+function addCategoryClickListener() {
+  $('.categories__item').click(function() {
+    var id = $(this).data('id');
+    getVideosByCategory(id);
+  });
 }
 
 // RUN ----------------------------------------------------------------
@@ -81,3 +121,4 @@ $('#player').click(function () {
 });
 
 addSearchListeners();
+

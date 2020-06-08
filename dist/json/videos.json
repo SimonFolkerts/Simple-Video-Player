@@ -1,49 +1,58 @@
 {
-  "videos" : [
+  "videos": [
     {
       "id": "BtLwoNJ6klE",
       "title": "Arduino Basics 101",
-      "category": "arduino"
+      "category": "arduino",
+      "categoryId": 1
     },
     {
       "id": "YT3birSKLLU",
       "title": "Arduino Basics 102",
-      "category": "arduino"
+      "category": "arduino",
+      "categoryId": 1
     },
     {
       "id": "nL34zDTPkcs",
       "title": "Arduino in 15min",
-      "category": "arduino"
+      "category": "arduino",
+      "categoryId": 1
     },
     {
       "id": "GCQwYgmuyVs",
       "title": "High Speed 3d Printing",
-      "category": "printing"
+      "category": "printing",
+      "categoryId": 2
     },
     {
       "id": "M2c5sneDjsk",
       "title": "3d Printed Screaming Spinning Tops",
-      "category": "printing"
+      "category": "printing",
+      "categoryId": 2
     },
     {
       "id": "O2thSsQrZUM",
       "title": "Carbon M1 Demo",
-      "category": "printing"
+      "category": "printing",
+      "categoryId": 2
     },
     {
       "id": "qvrHuaHhqHI",
       "title": "Fusion 360 Basics",
-      "category": "fusion"
+      "category": "fusion",
+      "categoryId": 3
     },
     {
       "id": "Do_C_NLH5sw",
       "title": "Fusion 360 CAM",
-      "category": "fusion"
+      "category": "fusion",
+      "categoryId": 3
     },
     {
       "id": "7hBZ6cFmWjQ",
       "title": "Fusion 360 Sheetmetal",
-      "category": "fusion"
+      "category": "fusion",
+      "categoryId": 3
     }
   ]
 }
