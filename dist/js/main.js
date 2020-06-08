@@ -1,15 +1,16 @@
 const el_videoList = $('#video-thumbnails');
+var videosArray = [];
 
 // INITIALISE ----------------------------------------------------------------
 function init() {
   $.getJSON('json/videos.json', function (data) {
-    var videosArray = data.videos;
+    videosArray = data.videos;
     displayVideos(videosArray);
   });
 }
 
 // DISPLAY VIDEOS ----------------------------------------------------------------
-function displayVideos(videos) {
+function displayVideos(videos) { //takes array of videos, displays in html
   var html = '';
   for (var i = 0; i < videos.length; i++) {
     html += makeVideoHTML(videos[i]);
@@ -43,11 +44,40 @@ function playVideo(videoId) {
   $('#player').show();
 }
 
+// FILTERING ----------------------------------------------------------------
+function getVideosByTitle(string) {
+  string = string.toLowerCase();
+  var matches = [];
+  for (var i = 0; i < videosArray.length; i++) {
+    var videoTitle = videosArray[i].title.toLowerCase();
+
+    if (videoTitle.includes(string)) {
+      matches.push(videosArray[i]);
+    }
+  }
+  displayVideos(matches);
+}
+
+function addSearchListeners() {
+  $('#search-bar__button').on('click', function () {
+    var searchString = $('#search-bar__input').val();
+    getVideosByTitle(searchString);
+  });
+  $('#search-bar__input').on('keyup', function (event) {
+    if (event.keyCode == 13) {
+      var searchString = $(this).val();
+      getVideosByTitle(searchString);
+    }
+  });
+
+}
 
 // RUN ----------------------------------------------------------------
 init();
 $('#player').hide();
-$('#player').click(function() {
+$('#player').click(function () {
   $('#player__frame').attr('src', '');
   $('#player').hide();
 });
+
+addSearchListeners();
