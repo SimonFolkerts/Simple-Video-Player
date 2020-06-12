@@ -9,27 +9,54 @@
     <script defer src="js/main.js"></script>
   </head>
   <body>
-    <div id="search-bar">
-      <label for="search-bar__input">Search Videos</label>
-      <input type="text" id="search-bar__input">
-      <input id="search-bar__button" type="button" value="Search">
-    </div>
-    <div id="categories">
-      <ul id="categories__list">
-        
-      </ul>
-    </div>
 
-    <section id="video-thumbnails">
+    <!-- This is the Nav  section -->
+    <header>
+      <nav>
+        <ul>
+          <li class="menu-item">
+            <a data-screen="home" class="screen-link active" href="#">Home</a>
+          </li>
+          <li class="menu-item">
+            <a data-screen="about" class="screen-link" href="#">About</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
+    <!-- This is the HOME screen --------------------------------------------------------------------------- -->
+    <section id="home" class="screen">
+
+      <!-- This is the search bar -->
+      <div id="search-bar">
+        <label for="search-bar__input">Search Videos</label>
+        <input type="text" id="search-bar__input">
+      </div>
+
+      <div id="categories">
+        <ul id="categories__list">
+          <!-- Categories will be inserted here by JS -->
+        </ul>
+      </div>
+
+      <section id="video-thumbnails">
+        <!-- Videos will be inserted here -->
+      </section>
+
+      <!-- This is the modal video player -->
+      <section id="player">
+        <iframe id="player__frame" width="560" height="315"
+          src="https://www.youtube.com/embed/BtLwoNJ6klE" frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope;
+          picture-in-picture" allowfullscreen></iframe>
+      </section>
 
     </section>
 
-    <section id="player">
-      <iframe id="player__frame" width="560" height="315"
-        src="https://www.youtube.com/embed/BtLwoNJ6klE" frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope;
-        picture-in-picture" allowfullscreen></iframe>
+    <!-- This is the ABOUT screen --------------------------------------------------------------------------- -->
+    <section id="about" class="screen">
+      <h1>About</h1>
+      <P>This is the about page where information about stuff would be placed.</P>
     </section>
 
   </body>

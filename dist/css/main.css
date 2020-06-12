@@ -26,4 +26,9 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
+
+.active {
+  color: red;
+  font-weight: bold;
+}
 /*# sourceMappingURL=main.css.map */
